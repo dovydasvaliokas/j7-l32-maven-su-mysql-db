@@ -15,6 +15,13 @@ public class Knyga {
         this.puslapiuSkaicius = puslapiuSkaicius;
     }
 
+    public Knyga(String pavadinimas, String aprasymas, double kaina, int puslapiuSkaicius) {
+        this.pavadinimas = pavadinimas;
+        this.aprasymas = aprasymas;
+        this.kaina = kaina;
+        this.puslapiuSkaicius = puslapiuSkaicius;
+    }
+
     public Knyga() {
     }
 
