@@ -1,9 +1,9 @@
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import dbveiksmai.DuombazesVeiksmai;
 import entity.Knyga;
+import utility.KonsolesVeiksmai;
 import utility.PapildomiVeiksmai;
 
 public class PagrindinePrograma {
@@ -24,7 +24,7 @@ public class PagrindinePrograma {
 
 
         //--------------------------------------------ANTROS DIENOS PAVYZDŽIAI------------------------------------------
-        Knyga naujaKnyga = PapildomiVeiksmai.nuskaitytiKnygaIsKonsoles();
+        Knyga naujaKnyga = KonsolesVeiksmai.nuskaitytiKnygaIsKonsoles();
         DuombazesVeiksmai.idetiKnyga(jungtis, naujaKnyga);
 
         // Išbandome: išvedu visas knygas
