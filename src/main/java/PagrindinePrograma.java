@@ -8,16 +8,10 @@ import utility.PapildomiVeiksmai;
 
 public class PagrindinePrograma {
     public static void main(String[] args) {
-        Connection jungtis = null;
-        try {
-            jungtis = DuombazesVeiksmai.prisijungtiPrieDuombazes();
-            ArrayList<Knyga> visosKnygos = DuombazesVeiksmai.grazintiVisasKnygas(jungtis);
-            PapildomiVeiksmai.isvestiKnyguListaEilutemis(visosKnygos);
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("Nepavyko prisijungti prie duomenų bazės.");
-        }
+        Connection jungtis = DuombazesVeiksmai.prisijungtiPrieDuombazes();
+        ArrayList<Knyga> visosKnygos = DuombazesVeiksmai.grazintiVisasKnygas(jungtis);
+        PapildomiVeiksmai.isvestiKnyguListaEilutemis(visosKnygos);
+
 
         ArrayList<Knyga> knygosDaugiauPsl300 = DuombazesVeiksmai.grazintiVirsPuslapiu(jungtis, 300);
         System.out.println("Knygos, kurios daugiau už 300");
@@ -34,12 +28,7 @@ public class PagrindinePrograma {
         DuombazesVeiksmai.idetiKnyga(jungtis, naujaKnyga);
 
         // Išbandome: išvedu visas knygas
-        try {
-            ArrayList<Knyga> visosKnygos = DuombazesVeiksmai.grazintiVisasKnygas(jungtis);
-            PapildomiVeiksmai.isvestiKnyguListaEilutemis(visosKnygos);
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
+        visosKnygos = DuombazesVeiksmai.grazintiVisasKnygas(jungtis);
+        PapildomiVeiksmai.isvestiKnyguListaEilutemis(visosKnygos);
     }
 }

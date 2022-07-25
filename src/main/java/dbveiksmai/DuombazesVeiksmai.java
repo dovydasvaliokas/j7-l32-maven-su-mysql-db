@@ -17,24 +17,37 @@ public class DuombazesVeiksmai {
     public DuombazesVeiksmai() {
     }
 
-    public static Connection prisijungtiPrieDuombazes() throws SQLException {
-        return DriverManager.getConnection(DB_NUORODA, DB_USER, DB_PASSWORD);
+    public static Connection prisijungtiPrieDuombazes() {
+        try {
+            return DriverManager.getConnection(DB_NUORODA, DB_USER, DB_PASSWORD);
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Nepavyko prisijungti prie duombazės");
+        }
+        return null;
     }
 
-    public static ArrayList<Knyga> grazintiVisasKnygas(Connection jungtis) throws SQLException {
+    public static ArrayList<Knyga> grazintiVisasKnygas(Connection jungtis) {
         ArrayList<Knyga> visosKnygos = new ArrayList<>();
         String sqlUzklausa = "SELECT * FROM knyga";
 
-        PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
-        ResultSet rezultatas = paruostukas.executeQuery();
-        while (rezultatas.next()) {
-            int id = rezultatas.getInt("id");
-            String pavadinimas = rezultatas.getString("pavadinimas");
-            String aprasymas = rezultatas.getString("aprasymas");
-            double kaina = rezultatas.getDouble("kaina");
-            int puslapiuSkaicius = rezultatas.getInt("puslapiu_skaicius");
-            Knyga laikinaKnyga = new Knyga(id, pavadinimas, aprasymas, kaina, puslapiuSkaicius);
-            visosKnygos.add(laikinaKnyga);
+        try {
+            PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
+            ResultSet rezultatas = paruostukas.executeQuery();
+            while (rezultatas.next()) {
+                int id = rezultatas.getInt("id");
+                String pavadinimas = rezultatas.getString("pavadinimas");
+                String aprasymas = rezultatas.getString("aprasymas");
+                double kaina = rezultatas.getDouble("kaina");
+                int puslapiuSkaicius = rezultatas.getInt("puslapiu_skaicius");
+                Knyga laikinaKnyga = new Knyga(id, pavadinimas, aprasymas, kaina, puslapiuSkaicius);
+                visosKnygos.add(laikinaKnyga);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Nepavyko gauti duomenų (knygų) iš DB");
         }
         return visosKnygos;
     }
