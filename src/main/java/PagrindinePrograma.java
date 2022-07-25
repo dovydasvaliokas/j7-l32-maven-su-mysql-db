@@ -23,14 +23,16 @@ public class PagrindinePrograma {
                 PapildomiVeiksmai.isvestiKnyguListaEilutemis(visosKnygos);
                 break;
             case 3:
-                System.out.println("blavlalblalb lbla");
+                Knyga naujaKnyga = KonsolesVeiksmai.nuskaitytiKnygaIsKonsoles();
+                DuombazesVeiksmai.idetiKnyga(jungtis, naujaKnyga);
                 break;
+            default:
+                System.out.println("Tokio pasirinkimo nėra");
         }
 
 
         //--------------------------------------------ANTROS DIENOS PAVYZDŽIAI------------------------------------------
-        Knyga naujaKnyga = KonsolesVeiksmai.nuskaitytiKnygaIsKonsoles();
-        DuombazesVeiksmai.idetiKnyga(jungtis, naujaKnyga);
+
 
     }
 }

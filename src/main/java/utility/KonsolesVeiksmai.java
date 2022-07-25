@@ -8,6 +8,7 @@ public class KonsolesVeiksmai {
     private static final Scanner skait = new Scanner(System.in);
 
     public static Knyga nuskaitytiKnygaIsKonsoles() {
+        skait.nextLine();
         System.out.println("Įveskite knygos pavadinimą: ");
         String pavadinimas = skait.nextLine();
         System.out.println("Įveskite knygos aprašymą: ");
