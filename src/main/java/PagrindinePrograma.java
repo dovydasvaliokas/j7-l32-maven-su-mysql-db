@@ -9,26 +9,28 @@ import utility.PapildomiVeiksmai;
 public class PagrindinePrograma {
     public static void main(String[] args) {
         Connection jungtis = DuombazesVeiksmai.prisijungtiPrieDuombazes();
-        ArrayList<Knyga> visosKnygos = DuombazesVeiksmai.grazintiVisasKnygas(jungtis);
-        PapildomiVeiksmai.isvestiKnyguListaEilutemis(visosKnygos);
+        int pasirinkimas = KonsolesVeiksmai.meniuPasirinkimai();
+        ArrayList<Knyga> visosKnygos = new ArrayList<>();
 
-
-        ArrayList<Knyga> knygosDaugiauPsl300 = DuombazesVeiksmai.grazintiVirsPuslapiu(jungtis, 300);
-        System.out.println("Knygos, kurios daugiau už 300");
-        PapildomiVeiksmai.isvestiKnyguListaEilutemis(knygosDaugiauPsl300);
-
-
-        // Susikuriu knygos objektą kode (idealiausia būtų nuskaityti jį iš kažkur, pvz. konsolės) ir įdedu į duombazę
-     //   Knyga idedamaKnyga = new Knyga("Grybų karas", "ASjfdj akf kjdfaks", 5.99, 28);
-     //   DuombazesVeiksmai.idetiKnyga(jungtis, idedamaKnyga);
+        switch (pasirinkimas) {
+            case 1:
+                visosKnygos = DuombazesVeiksmai.grazintiVisasKnygas(jungtis);
+                PapildomiVeiksmai.isvestiKnyguListaEilutemis(visosKnygos);
+                break;
+            case 2:
+                int pslSkaicius = KonsolesVeiksmai.nuskaitytiPsl();
+                visosKnygos = DuombazesVeiksmai.grazintiVirsPuslapiu(jungtis, pslSkaicius);
+                PapildomiVeiksmai.isvestiKnyguListaEilutemis(visosKnygos);
+                break;
+            case 3:
+                System.out.println("blavlalblalb lbla");
+                break;
+        }
 
 
         //--------------------------------------------ANTROS DIENOS PAVYZDŽIAI------------------------------------------
         Knyga naujaKnyga = KonsolesVeiksmai.nuskaitytiKnygaIsKonsoles();
         DuombazesVeiksmai.idetiKnyga(jungtis, naujaKnyga);
 
-        // Išbandome: išvedu visas knygas
-        visosKnygos = DuombazesVeiksmai.grazintiVisasKnygas(jungtis);
-        PapildomiVeiksmai.isvestiKnyguListaEilutemis(visosKnygos);
     }
 }

@@ -32,4 +32,9 @@ public class KonsolesVeiksmai {
         return skait.nextInt();
     }
 
+
+    public static int nuskaitytiPsl() {
+        System.out.println("Įveksite už kiek puslapių daugiau turi turėti knyga: ");
+        return skait.nextInt();
+    }
 }
