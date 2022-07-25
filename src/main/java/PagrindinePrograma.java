@@ -25,8 +25,13 @@ public class PagrindinePrograma {
 
 
         // Susikuriu knygos objektą kode (idealiausia būtų nuskaityti jį iš kažkur, pvz. konsolės) ir įdedu į duombazę
-        Knyga idedamaKnyga = new Knyga("Grybų karas", "ASjfdj akf kjdfaks", 5.99, 28);
-        DuombazesVeiksmai.idetiKnyga(jungtis, idedamaKnyga);
+     //   Knyga idedamaKnyga = new Knyga("Grybų karas", "ASjfdj akf kjdfaks", 5.99, 28);
+     //   DuombazesVeiksmai.idetiKnyga(jungtis, idedamaKnyga);
+
+
+        //--------------------------------------------ANTROS DIENOS PAVYZDŽIAI------------------------------------------
+        Knyga naujaKnyga = PapildomiVeiksmai.nuskaitytiKnygaIsKonsoles();
+        DuombazesVeiksmai.idetiKnyga(jungtis, naujaKnyga);
 
         // Išbandome: išvedu visas knygas
         try {
@@ -36,9 +41,5 @@ public class PagrindinePrograma {
         catch (SQLException e) {
             e.printStackTrace();
         }
-
-
-        //--------------------------------------------ANTROS DIENOS PAVYZDŽIAI------------------------------------------
-        PapildomiVeiksmai.nuskaitytiKnygaIsKonsoles();
     }
 }

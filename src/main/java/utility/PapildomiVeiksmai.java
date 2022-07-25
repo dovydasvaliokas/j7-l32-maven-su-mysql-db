@@ -27,11 +27,9 @@ public class PapildomiVeiksmai {
         System.out.println("Įveskite knygos puslapių skaičių: ");
         int pslSk = skait.nextInt();
 
-        System.out.println("pslSk = " + pslSk);
-        System.out.println("kaina = " + kaina);
-        System.out.println("aprasymas = " + aprasymas);
-        System.out.println("pavadinimas = " + pavadinimas);
+     //   Knyga knyga = new Knyga(pavadinimas, aprasymas, kaina, pslSk);
+      //  return knyga;
 
-        return new Knyga();
+        return new Knyga(pavadinimas, aprasymas, kaina, pslSk);
     }
 }
