@@ -23,6 +23,13 @@ public class KonsolesVeiksmai {
         return new Knyga(pavadinimas, aprasymas, kaina, pslSk);
     }
 
+    public static int meniuPasirinkimai() {
+        System.out.println("Meniu pasirinkimai:");
+        System.out.println("1 - išvesti visas knygas");
+        System.out.println("2 - išvesti visas knygas, kurios ten turi daugiau nei X psl.");
+        System.out.println("3 - įdėti knygą");
 
+        return skait.nextInt();
+    }
 
 }
