@@ -37,5 +37,8 @@ public class PagrindinePrograma {
             e.printStackTrace();
         }
 
+
+        //--------------------------------------------ANTROS DIENOS PAVYZDŽIAI------------------------------------------
+        PapildomiVeiksmai.nuskaitytiKnygaIsKonsoles();
     }
 }
