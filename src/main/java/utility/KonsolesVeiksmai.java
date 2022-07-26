@@ -1,6 +1,7 @@
 package utility;
 
 import dbveiksmai.AutoriausVeiksmai;
+import entity.Autorius;
 import entity.Knyga;
 
 import java.sql.Connection;
@@ -29,6 +30,17 @@ public class KonsolesVeiksmai {
         System.out.println("Išvedami visi autoriai. Įrašykite autoriaus id, kurį norite pasirinkti, o jeigu nėra įrašykite 0 arba bet kokį mažesnį (neigiamą) skaičių: ");
         PapildomiVeiksmai.isvestiListaEilutemis(AutoriausVeiksmai.gautiVisusAutorius(jungtis));
         return skait.nextInt();
+    }
+
+    public static Autorius nuskaitytiAutoriu() {
+    //    skait.nextLine();
+        System.out.println("Įveskite autoriaus vardą: ");
+        String vardas = skait.nextLine();
+        System.out.println("Įveskite autoriaus pavardę: ");
+        String pavarde = skait.nextLine();
+        System.out.println("Įveskite autoriaus šalį: ");
+        String salis = skait.nextLine();
+        return new Autorius(vardas, pavarde, salis);
     }
 
     public static int meniuPasirinkimai() {

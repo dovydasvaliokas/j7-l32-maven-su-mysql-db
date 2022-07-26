@@ -13,6 +13,12 @@ public class Autorius {
         this.salis = salis;
     }
 
+    public Autorius(String vardas, String pavarde, String salis) {
+        this.vardas = vardas;
+        this.pavarde = pavarde;
+        this.salis = salis;
+    }
+
     public Autorius() {
     }
 
