@@ -15,9 +15,6 @@ public class PagrindinePrograma {
         ArrayList<Knyga> visosKnygos = new ArrayList<>();
         ArrayList<Autorius> autoriai = new ArrayList<>();
 
-        autoriai = AutoriausVeiksmai.gautiVisusAutorius(jungtis);
-        PapildomiVeiksmai.isvestiListaEilutemis(autoriai);
-
         int pasirinkimas = KonsolesVeiksmai.meniuPasirinkimai();
 
 
@@ -35,6 +32,9 @@ public class PagrindinePrograma {
                 Knyga naujaKnyga = KonsolesVeiksmai.nuskaitytiKnygaIsKonsoles();
                 KnygosVeiksmai.idetiKnyga(jungtis, naujaKnyga);
                 break;
+            case 4:
+                autoriai = AutoriausVeiksmai.gautiVisusAutorius(jungtis);
+                PapildomiVeiksmai.isvestiListaEilutemis(autoriai);
             default:
                 System.out.println("Tokio pasirinkimo nėra");
         }

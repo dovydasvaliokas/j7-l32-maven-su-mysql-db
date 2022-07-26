@@ -29,6 +29,7 @@ public class KonsolesVeiksmai {
         System.out.println("1 - išvesti visas knygas");
         System.out.println("2 - išvesti visas knygas, kurios ten turi daugiau nei X psl.");
         System.out.println("3 - įdėti knygą");
+        System.out.println("4 - išvessti visus autorius");
 
         return skait.nextInt();
     }
