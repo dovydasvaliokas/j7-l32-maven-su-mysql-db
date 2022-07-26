@@ -25,4 +25,18 @@ public class AutoriausVeiksmai {
         }
         return visiAutoriai;
     }
+
+    public static void idetiAutoriu(Connection jungtis, Autorius autorius) {
+        String sqlUzklausa = "INSERT INTO autoriai(vardas, pavarde, šalis) VALUES (?, ?, ?)";
+
+        try {
+            PreparedStatement paruostukas = jungtis.prepareStatement(sqlUzklausa);
+            paruostukas.setString(1, autorius.getVardas());
+            paruostukas.setString(2, autorius.getPavarde());
+            paruostukas.setString(3, autorius.getSalis());
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
