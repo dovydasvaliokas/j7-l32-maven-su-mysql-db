@@ -30,10 +30,5 @@ public class PagrindinePrograma {
             default:
                 System.out.println("Tokio pasirinkimo nėra");
         }
-
-
-        //--------------------------------------------ANTROS DIENOS PAVYZDŽIAI------------------------------------------
-
-
     }
 }
