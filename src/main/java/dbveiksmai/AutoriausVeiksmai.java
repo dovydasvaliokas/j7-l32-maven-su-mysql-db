@@ -34,6 +34,8 @@ public class AutoriausVeiksmai {
             paruostukas.setString(1, autorius.getVardas());
             paruostukas.setString(2, autorius.getPavarde());
             paruostukas.setString(3, autorius.getSalis());
+
+            paruostukas.executeUpdate();
         }
         catch (SQLException e) {
             e.printStackTrace();

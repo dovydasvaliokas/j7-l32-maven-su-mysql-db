@@ -13,11 +13,11 @@ import utility.PapildomiVeiksmai;
 public class PagrindinePrograma {
     public static void main(String[] args) {
         Connection jungtis = DuombazesVeiksmai.prisijungtiPrieDuombazes();
+
         ArrayList<Knyga> visosKnygos = new ArrayList<>();
         ArrayList<Autorius> autoriai = new ArrayList<>();
 
         int pasirinkimas = KonsolesVeiksmai.meniuPasirinkimai();
-
 
         switch (pasirinkimas) {
             case 1:
@@ -40,6 +40,11 @@ public class PagrindinePrograma {
             case 4:
                 autoriai = AutoriausVeiksmai.gautiVisusAutorius(jungtis);
                 PapildomiVeiksmai.isvestiListaEilutemis(autoriai);
+                break;
+            case 5:
+                Autorius autorius = KonsolesVeiksmai.nuskaitytiAutoriu();
+                AutoriausVeiksmai.idetiAutoriu(jungtis, autorius);
+                break;
             default:
                 System.out.println("Tokio pasirinkimo nėra");
         }

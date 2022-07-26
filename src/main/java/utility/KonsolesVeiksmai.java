@@ -33,7 +33,7 @@ public class KonsolesVeiksmai {
     }
 
     public static Autorius nuskaitytiAutoriu() {
-    //    skait.nextLine();
+        skait.nextLine();
         System.out.println("Įveskite autoriaus vardą: ");
         String vardas = skait.nextLine();
         System.out.println("Įveskite autoriaus pavardę: ");
@@ -49,6 +49,7 @@ public class KonsolesVeiksmai {
         System.out.println("2 - išvesti visas knygas, kurios ten turi daugiau nei X psl.");
         System.out.println("3 - įdėti knygą");
         System.out.println("4 - išvessti visus autorius");
+        System.out.println("5 - įdėti naują autorių");
 
         return skait.nextInt();
     }
