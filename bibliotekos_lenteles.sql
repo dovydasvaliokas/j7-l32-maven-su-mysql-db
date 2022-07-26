@@ -28,3 +28,14 @@ CREATE TABLE IF NOT EXISTS autoriai (
     šalis VARCHAR(50),
     PRIMARY KEY(id)
 ) ENGINE = INNODB;
+
+
+
+-- sujungimo lentelė
+CREATE TABLE IF NOT EXISTS knygu_autoriai(
+    autoriaus_id INT UNSIGNED NOT NULL,
+    knygos_id INT UNSIGNED NOT NULL,
+    PRIMARY KEY(autoriaus_id, knygos_id),
+    FOREIGN KEY(autoriaus_id) REFERENCES autoriai(id),
+    FOREIGN KEY(knygos_id) REFERENCES knyga(id)
+) ENGINE = INNODB;
