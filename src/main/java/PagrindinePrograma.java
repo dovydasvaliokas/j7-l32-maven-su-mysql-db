@@ -35,7 +35,16 @@ public class PagrindinePrograma {
                 KnygosVeiksmai.idetiKnyga(jungtis, naujaKnyga);
                 visosKnygos = KnygosVeiksmai.grazintiVisasKnygas(jungtis);
                 int knygosId = visosKnygos.get(visosKnygos.size() - 1).getId();
+
+                if (autoriausId <= 0) {
+                    Autorius autorius = KonsolesVeiksmai.nuskaitytiAutoriu();
+                    AutoriausVeiksmai.idetiAutoriu(jungtis, autorius);
+                    autoriai = AutoriausVeiksmai.gautiVisusAutorius(jungtis);
+                    autoriausId = autoriai.get(autoriai.size() - 1).getId();
+                }
+
                 KnyguAutoriuVeiksmai.sujungtiKnygaSuAutorium(jungtis, knygosId, autoriausId);
+
                 break;
             case 4:
                 autoriai = AutoriausVeiksmai.gautiVisusAutorius(jungtis);
