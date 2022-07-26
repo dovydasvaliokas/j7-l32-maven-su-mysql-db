@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.util.ArrayList;
 
 import dbveiksmai.DuombazesVeiksmai;
+import dbveiksmai.KnygosVeiksmai;
 import entity.Knyga;
 import utility.KonsolesVeiksmai;
 import utility.PapildomiVeiksmai;
@@ -14,17 +15,17 @@ public class PagrindinePrograma {
 
         switch (pasirinkimas) {
             case 1:
-                visosKnygos = DuombazesVeiksmai.grazintiVisasKnygas(jungtis);
+                visosKnygos = KnygosVeiksmai.grazintiVisasKnygas(jungtis);
                 PapildomiVeiksmai.isvestiKnyguListaEilutemis(visosKnygos);
                 break;
             case 2:
                 int pslSkaicius = KonsolesVeiksmai.nuskaitytiPsl();
-                visosKnygos = DuombazesVeiksmai.grazintiVirsPuslapiu(jungtis, pslSkaicius);
+                visosKnygos = KnygosVeiksmai.grazintiVirsPuslapiu(jungtis, pslSkaicius);
                 PapildomiVeiksmai.isvestiKnyguListaEilutemis(visosKnygos);
                 break;
             case 3:
                 Knyga naujaKnyga = KonsolesVeiksmai.nuskaitytiKnygaIsKonsoles();
-                DuombazesVeiksmai.idetiKnyga(jungtis, naujaKnyga);
+                KnygosVeiksmai.idetiKnyga(jungtis, naujaKnyga);
                 break;
             default:
                 System.out.println("Tokio pasirinkimo nėra");
